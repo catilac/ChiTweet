@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4665BF621952B2260029CADD /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4665BF611952B2260029CADD /* TwitterClient.m */; };
+		4695682919528ECF00E1A789 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4695682819528ECF00E1A789 /* Foundation.framework */; };
+		4695682B19528ECF00E1A789 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4695682A19528ECF00E1A789 /* CoreGraphics.framework */; };
+		4695682D19528ECF00E1A789 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4695682C19528ECF00E1A789 /* UIKit.framework */; };
+		4695683319528ECF00E1A789 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4695683119528ECF00E1A789 /* InfoPlist.strings */; };
+		4695683519528ECF00E1A789 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695683419528ECF00E1A789 /* main.m */; };
+		4695683919528ECF00E1A789 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695683819528ECF00E1A789 /* AppDelegate.m */; };
+		4695683B19528ECF00E1A789 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4695683A19528ECF00E1A789 /* Images.xcassets */; };
+		4695684219528ECF00E1A789 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4695684119528ECF00E1A789 /* XCTest.framework */; };
+		4695684319528ECF00E1A789 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4695682819528ECF00E1A789 /* Foundation.framework */; };
+		4695684419528ECF00E1A789 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4695682C19528ECF00E1A789 /* UIKit.framework */; };
+		4695684C19528ECF00E1A789 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4695684A19528ECF00E1A789 /* InfoPlist.strings */; };
+		4695684E19528ECF00E1A789 /* ChiTweetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695684D19528ECF00E1A789 /* ChiTweetTests.m */; };
+		5CDB2467FFF54A4BA3222105 /* libPods-ChiTweet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD06DBA2D4C4F03840DAA6B /* libPods-ChiTweet.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4695684519528ECF00E1A789 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4695681D19528ECF00E1A789 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4695682419528ECF00E1A789;
+			remoteInfo = ChiTweet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4665BF601952B2260029CADD /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
+		4665BF611952B2260029CADD /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
+		4695682519528ECF00E1A789 /* ChiTweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChiTweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4695682819528ECF00E1A789 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4695682A19528ECF00E1A789 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4695682C19528ECF00E1A789 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4695683019528ECF00E1A789 /* ChiTweet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChiTweet-Info.plist"; sourceTree = "<group>"; };
+		4695683219528ECF00E1A789 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4695683419528ECF00E1A789 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4695683619528ECF00E1A789 /* ChiTweet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChiTweet-Prefix.pch"; sourceTree = "<group>"; };
+		4695683719528ECF00E1A789 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4695683819528ECF00E1A789 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4695683A19528ECF00E1A789 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4695684019528ECF00E1A789 /* ChiTweetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChiTweetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4695684119528ECF00E1A789 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4695684919528ECF00E1A789 /* ChiTweetTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChiTweetTests-Info.plist"; sourceTree = "<group>"; };
+		4695684B19528ECF00E1A789 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4695684D19528ECF00E1A789 /* ChiTweetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChiTweetTests.m; sourceTree = "<group>"; };
+		B97DA5DE03B64654918A2983 /* Pods-ChiTweet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChiTweet.xcconfig"; path = "Pods/Pods-ChiTweet.xcconfig"; sourceTree = "<group>"; };
+		DBD06DBA2D4C4F03840DAA6B /* libPods-ChiTweet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChiTweet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4695682219528ECF00E1A789 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4695682B19528ECF00E1A789 /* CoreGraphics.framework in Frameworks */,
+				4695682D19528ECF00E1A789 /* UIKit.framework in Frameworks */,
+				4695682919528ECF00E1A789 /* Foundation.framework in Frameworks */,
+				5CDB2467FFF54A4BA3222105 /* libPods-ChiTweet.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4695683D19528ECF00E1A789 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4695684219528ECF00E1A789 /* XCTest.framework in Frameworks */,
+				4695684419528ECF00E1A789 /* UIKit.framework in Frameworks */,
+				4695684319528ECF00E1A789 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4665BF5F1952AC120029CADD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4665BF601952B2260029CADD /* TwitterClient.h */,
+				4665BF611952B2260029CADD /* TwitterClient.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		4695681C19528ECF00E1A789 = {
+			isa = PBXGroup;
+			children = (
+				4695682E19528ECF00E1A789 /* ChiTweet */,
+				4695684719528ECF00E1A789 /* ChiTweetTests */,
+				4695682719528ECF00E1A789 /* Frameworks */,
+				4695682619528ECF00E1A789 /* Products */,
+				B97DA5DE03B64654918A2983 /* Pods-ChiTweet.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		4695682619528ECF00E1A789 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4695682519528ECF00E1A789 /* ChiTweet.app */,
+				4695684019528ECF00E1A789 /* ChiTweetTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4695682719528ECF00E1A789 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4695682819528ECF00E1A789 /* Foundation.framework */,
+				4695682A19528ECF00E1A789 /* CoreGraphics.framework */,
+				4695682C19528ECF00E1A789 /* UIKit.framework */,
+				4695684119528ECF00E1A789 /* XCTest.framework */,
+				DBD06DBA2D4C4F03840DAA6B /* libPods-ChiTweet.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4695682E19528ECF00E1A789 /* ChiTweet */ = {
+			isa = PBXGroup;
+			children = (
+				4665BF5F1952AC120029CADD /* API */,
+				4695683719528ECF00E1A789 /* AppDelegate.h */,
+				4695683819528ECF00E1A789 /* AppDelegate.m */,
+				4695683A19528ECF00E1A789 /* Images.xcassets */,
+				4695682F19528ECF00E1A789 /* Supporting Files */,
+			);
+			path = ChiTweet;
+			sourceTree = "<group>";
+		};
+		4695682F19528ECF00E1A789 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4695683019528ECF00E1A789 /* ChiTweet-Info.plist */,
+				4695683119528ECF00E1A789 /* InfoPlist.strings */,
+				4695683419528ECF00E1A789 /* main.m */,
+				4695683619528ECF00E1A789 /* ChiTweet-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4695684719528ECF00E1A789 /* ChiTweetTests */ = {
+			isa = PBXGroup;
+			children = (
+				4695684D19528ECF00E1A789 /* ChiTweetTests.m */,
+				4695684819528ECF00E1A789 /* Supporting Files */,
+			);
+			path = ChiTweetTests;
+			sourceTree = "<group>";
+		};
+		4695684819528ECF00E1A789 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4695684919528ECF00E1A789 /* ChiTweetTests-Info.plist */,
+				4695684A19528ECF00E1A789 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4695682419528ECF00E1A789 /* ChiTweet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4695685119528ECF00E1A789 /* Build configuration list for PBXNativeTarget "ChiTweet" */;
+			buildPhases = (
+				AF42AEA8AE414230A84791CD /* Check Pods Manifest.lock */,
+				4695682119528ECF00E1A789 /* Sources */,
+				4695682219528ECF00E1A789 /* Frameworks */,
+				4695682319528ECF00E1A789 /* Resources */,
+				5D05AE0D17394696AD9D610C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChiTweet;
+			productName = ChiTweet;
+			productReference = 4695682519528ECF00E1A789 /* ChiTweet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4695683F19528ECF00E1A789 /* ChiTweetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4695685419528ECF00E1A789 /* Build configuration list for PBXNativeTarget "ChiTweetTests" */;
+			buildPhases = (
+				4695683C19528ECF00E1A789 /* Sources */,
+				4695683D19528ECF00E1A789 /* Frameworks */,
+				4695683E19528ECF00E1A789 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4695684619528ECF00E1A789 /* PBXTargetDependency */,
+			);
+			name = ChiTweetTests;
+			productName = ChiTweetTests;
+			productReference = 4695684019528ECF00E1A789 /* ChiTweetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4695681D19528ECF00E1A789 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Chirag Davé";
+				TargetAttributes = {
+					4695683F19528ECF00E1A789 = {
+						TestTargetID = 4695682419528ECF00E1A789;
+					};
+				};
+			};
+			buildConfigurationList = 4695682019528ECF00E1A789 /* Build configuration list for PBXProject "ChiTweet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4695681C19528ECF00E1A789;
+			productRefGroup = 4695682619528ECF00E1A789 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4695682419528ECF00E1A789 /* ChiTweet */,
+				4695683F19528ECF00E1A789 /* ChiTweetTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4695682319528ECF00E1A789 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4695683319528ECF00E1A789 /* InfoPlist.strings in Resources */,
+				4695683B19528ECF00E1A789 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4695683E19528ECF00E1A789 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4695684C19528ECF00E1A789 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D05AE0D17394696AD9D610C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-ChiTweet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF42AEA8AE414230A84791CD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4695682119528ECF00E1A789 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4695683919528ECF00E1A789 /* AppDelegate.m in Sources */,
+				4665BF621952B2260029CADD /* TwitterClient.m in Sources */,
+				4695683519528ECF00E1A789 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4695683C19528ECF00E1A789 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4695684E19528ECF00E1A789 /* ChiTweetTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4695684619528ECF00E1A789 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4695682419528ECF00E1A789 /* ChiTweet */;
+			targetProxy = 4695684519528ECF00E1A789 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4695683119528ECF00E1A789 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4695683219528ECF00E1A789 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4695684A19528ECF00E1A789 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4695684B19528ECF00E1A789 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4695684F19528ECF00E1A789 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4695685019528ECF00E1A789 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4695685219528ECF00E1A789 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B97DA5DE03B64654918A2983 /* Pods-ChiTweet.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChiTweet/ChiTweet-Prefix.pch";
+				INFOPLIST_FILE = "ChiTweet/ChiTweet-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4695685319528ECF00E1A789 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B97DA5DE03B64654918A2983 /* Pods-ChiTweet.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChiTweet/ChiTweet-Prefix.pch";
+				INFOPLIST_FILE = "ChiTweet/ChiTweet-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4695685519528ECF00E1A789 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ChiTweet.app/ChiTweet";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChiTweet/ChiTweet-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ChiTweetTests/ChiTweetTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4695685619528ECF00E1A789 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ChiTweet.app/ChiTweet";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChiTweet/ChiTweet-Prefix.pch";
+				INFOPLIST_FILE = "ChiTweetTests/ChiTweetTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4695682019528ECF00E1A789 /* Build configuration list for PBXProject "ChiTweet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4695684F19528ECF00E1A789 /* Debug */,
+				4695685019528ECF00E1A789 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4695685119528ECF00E1A789 /* Build configuration list for PBXNativeTarget "ChiTweet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4695685219528ECF00E1A789 /* Debug */,
+				4695685319528ECF00E1A789 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4695685419528ECF00E1A789 /* Build configuration list for PBXNativeTarget "ChiTweetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4695685519528ECF00E1A789 /* Debug */,
+				4695685619528ECF00E1A789 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4695681D19528ECF00E1A789 /* Project object */;
+}
