@@ -8,9 +8,11 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "TweetsViewController.h"
 #import "NSDictionary+BDBOAuth1Manager.h"
 #import "TwitterClient.h"
 #import "User.h"
+
 
 
 @implementation AppDelegate
@@ -23,11 +25,19 @@
     if ([User currentUser] == nil) {
         LoginViewController *loginScreen = [[LoginViewController alloc] init];
         self.window.rootViewController = loginScreen;
+    } else {
+        [self loadLoggedInView];
     }
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)loadLoggedInView {
+    TweetsViewController *tweetsVC = [[TweetsViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:tweetsVC];
+    self.window.rootViewController = nvc;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -66,17 +76,17 @@
             if (parameters[@"oauth_token"] && parameters[@"oauth_verifier"]) {
                 TwitterClient *client = [TwitterClient instance];
                 [client fetchAccessTokenWithPath:@"oauth/access_token" method:@"POST" requestToken:[BDBOAuthToken tokenWithQueryString:url.query] success:^(BDBOAuthToken *accessToken) {
-                    NSLog(@"access token");
                     [client.requestSerializer saveAccessToken:accessToken];
 
                     [client verifyCredentialsWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-                        NSLog(@"verify creds: %@", responseObject);
 
                         User *currentUser = [User currentUser];
                         if (currentUser == nil) {
                             currentUser = [[User alloc] initWithDictionary:responseObject];
                             [User setCurrentUser:currentUser];
                         }
+                        
+                        [self loadLoggedInView];
                         
                     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                         NSLog(@"Something went wrong...");
