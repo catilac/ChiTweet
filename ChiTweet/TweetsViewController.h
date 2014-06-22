@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TweetsViewControllerDelegate <NSObject>
+
+- (void)dismissView;
+
+@end
+
 @interface TweetsViewController : UIViewController
+
+@property (nonatomic, weak) id <TweetsViewControllerDelegate> delegate;
 
 @end

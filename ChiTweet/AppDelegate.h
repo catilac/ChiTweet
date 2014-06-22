@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TweetsViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, TweetsViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

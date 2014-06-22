@@ -24,7 +24,9 @@ static User *currentUser = nil;
         // Read from NSUserDefaults
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSData *archivedUser = [defaults objectForKey:CURRENT_USER_KEY];
-        currentUser = (User *)[NSKeyedUnarchiver unarchiveObjectWithData:archivedUser];
+        if (archivedUser != nil) {
+            currentUser = (User *)[NSKeyedUnarchiver unarchiveObjectWithData:archivedUser];
+        }
     }
     return currentUser;
 }
@@ -32,7 +34,10 @@ static User *currentUser = nil;
 + (void)setCurrentUser:(User *)user {
     currentUser = user;
     // but also save the user
-    NSData *archivedUser = [NSKeyedArchiver archivedDataWithRootObject:user];
+    NSData *archivedUser = nil;
+    if (user != nil) {
+        archivedUser = [NSKeyedArchiver archivedDataWithRootObject:user];
+    }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:archivedUser forKey:CURRENT_USER_KEY];

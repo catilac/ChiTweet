@@ -11,6 +11,8 @@
 		4652EA521956A1D800125A9A /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4652EA511956A1D800125A9A /* Tweet.m */; };
 		4652EA5B1956DB5500125A9A /* TweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4652EA591956DB5500125A9A /* TweetsViewController.m */; };
 		4652EA5C1956DB5500125A9A /* TweetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4652EA5A1956DB5500125A9A /* TweetsViewController.xib */; };
+		4652EA611956DCD200125A9A /* TweetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4652EA5F1956DCD200125A9A /* TweetTableViewCell.m */; };
+		4652EA621956DCD200125A9A /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4652EA601956DCD200125A9A /* TweetTableViewCell.xib */; };
 		4665BF621952B2260029CADD /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4665BF611952B2260029CADD /* TwitterClient.m */; };
 		4695682919528ECF00E1A789 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4695682819528ECF00E1A789 /* Foundation.framework */; };
 		4695682B19528ECF00E1A789 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4695682A19528ECF00E1A789 /* CoreGraphics.framework */; };
@@ -47,6 +49,9 @@
 		4652EA581956DB5500125A9A /* TweetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsViewController.h; sourceTree = "<group>"; };
 		4652EA591956DB5500125A9A /* TweetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsViewController.m; sourceTree = "<group>"; };
 		4652EA5A1956DB5500125A9A /* TweetsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetsViewController.xib; sourceTree = "<group>"; };
+		4652EA5E1956DCD200125A9A /* TweetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetTableViewCell.h; sourceTree = "<group>"; };
+		4652EA5F1956DCD200125A9A /* TweetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetTableViewCell.m; sourceTree = "<group>"; };
+		4652EA601956DCD200125A9A /* TweetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		4665BF601952B2260029CADD /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
 		4665BF611952B2260029CADD /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
 		4695682519528ECF00E1A789 /* ChiTweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChiTweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +113,16 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		4652EA5D1956DCB800125A9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4652EA5E1956DCD200125A9A /* TweetTableViewCell.h */,
+				4652EA5F1956DCD200125A9A /* TweetTableViewCell.m */,
+				4652EA601956DCD200125A9A /* TweetTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		4665BF5F1952AC120029CADD /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +167,7 @@
 		4695682E19528ECF00E1A789 /* ChiTweet */ = {
 			isa = PBXGroup;
 			children = (
+				4652EA5D1956DCB800125A9A /* Views */,
 				4652EA4C1956A1B600125A9A /* Models */,
 				46FDA60C19562B4B00B77E4E /* View Controllers */,
 				4665BF5F1952AC120029CADD /* API */,
@@ -282,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4652EA621956DCD200125A9A /* TweetTableViewCell.xib in Resources */,
 				4652EA5C1956DB5500125A9A /* TweetsViewController.xib in Resources */,
 				4695683319528ECF00E1A789 /* InfoPlist.strings in Resources */,
 				4695683B19528ECF00E1A789 /* Images.xcassets in Resources */,
@@ -340,6 +357,7 @@
 				4652EA4F1956A1C700125A9A /* User.m in Sources */,
 				46FDA61019562B9A00B77E4E /* LoginViewController.m in Sources */,
 				4695683919528ECF00E1A789 /* AppDelegate.m in Sources */,
+				4652EA611956DCD200125A9A /* TweetTableViewCell.m in Sources */,
 				4652EA521956A1D800125A9A /* Tweet.m in Sources */,
 				4665BF621952B2260029CADD /* TwitterClient.m in Sources */,
 				4695683519528ECF00E1A789 /* main.m in Sources */,

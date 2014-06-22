@@ -23,8 +23,7 @@
     // Override point for customization after application launch.
     
     if ([User currentUser] == nil) {
-        LoginViewController *loginScreen = [[LoginViewController alloc] init];
-        self.window.rootViewController = loginScreen;
+        [self loadLoggedOutView];
     } else {
         [self loadLoggedInView];
     }
@@ -32,6 +31,11 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)loadLoggedOutView {
+    LoginViewController *loginScreen = [[LoginViewController alloc] init];
+    self.window.rootViewController = loginScreen;
 }
 
 - (void)loadLoggedInView {
@@ -103,6 +107,11 @@
     
     return NO;
     
+}
+
+#pragma mark - TweetsViewControllerDelegate Methods
+- (void)dismissView {
+    [self loadLoggedOutView];
 }
 
 @end
