@@ -10,4 +10,9 @@
 
 @interface TwitterClient : BDBOAuth1RequestOperationManager
 
++ (TwitterClient *) instance;
+
+- (void) login;
+
+- (AFHTTPRequestOperation *)homeTimeline;
 @end

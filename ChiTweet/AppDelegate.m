@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "NSDictionary+BDBOAuth1Manager.h"
+#import "TwitterClient.h"
+
 
 @implementation AppDelegate
 
@@ -14,6 +18,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    LoginViewController *loginScreen = [[LoginViewController alloc] init];
+    self.window.rootViewController = loginScreen;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -44,6 +51,32 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    if ([url.scheme isEqualToString:@"chitweet"]) {
+        if ([url.host isEqualToString:@"oauth"]) {
+            NSDictionary *parameters = [NSDictionary dictionaryFromQueryString:url.query];
+            
+            if (parameters[@"oauth_token"] && parameters[@"oauth_verifier"]) {
+                TwitterClient *client = [TwitterClient instance];
+                [client fetchAccessTokenWithPath:@"oauth/access_token" method:@"POST" requestToken:[BDBOAuthToken tokenWithQueryString:url.query] success:^(BDBOAuthToken *accessToken) {
+                    NSLog(@"access token");
+                    [client.requestSerializer saveAccessToken:accessToken];
+                    
+                    [client homeTimeline];
+                    
+                } failure:^(NSError *error) {
+                    NSLog(@"no access token");
+                }];
+            }
+        }
+        return YES;
+    }
+    
+    return NO;
+    
 }
 
 @end

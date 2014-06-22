@@ -20,6 +20,8 @@
 		4695684419528ECF00E1A789 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4695682C19528ECF00E1A789 /* UIKit.framework */; };
 		4695684C19528ECF00E1A789 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4695684A19528ECF00E1A789 /* InfoPlist.strings */; };
 		4695684E19528ECF00E1A789 /* ChiTweetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695684D19528ECF00E1A789 /* ChiTweetTests.m */; };
+		46FDA61019562B9A00B77E4E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FDA60E19562B9A00B77E4E /* LoginViewController.m */; };
+		46FDA61119562B9A00B77E4E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46FDA60F19562B9A00B77E4E /* LoginViewController.xib */; };
 		5CDB2467FFF54A4BA3222105 /* libPods-ChiTweet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD06DBA2D4C4F03840DAA6B /* libPods-ChiTweet.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,9 @@
 		4695684919528ECF00E1A789 /* ChiTweetTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChiTweetTests-Info.plist"; sourceTree = "<group>"; };
 		4695684B19528ECF00E1A789 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4695684D19528ECF00E1A789 /* ChiTweetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChiTweetTests.m; sourceTree = "<group>"; };
+		46FDA60D19562B9A00B77E4E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		46FDA60E19562B9A00B77E4E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		46FDA60F19562B9A00B77E4E /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		B97DA5DE03B64654918A2983 /* Pods-ChiTweet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChiTweet.xcconfig"; path = "Pods/Pods-ChiTweet.xcconfig"; sourceTree = "<group>"; };
 		DBD06DBA2D4C4F03840DAA6B /* libPods-ChiTweet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChiTweet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +130,7 @@
 		4695682E19528ECF00E1A789 /* ChiTweet */ = {
 			isa = PBXGroup;
 			children = (
+				46FDA60C19562B4B00B77E4E /* View Controllers */,
 				4665BF5F1952AC120029CADD /* API */,
 				4695683719528ECF00E1A789 /* AppDelegate.h */,
 				4695683819528ECF00E1A789 /* AppDelegate.m */,
@@ -161,6 +167,16 @@
 				4695684A19528ECF00E1A789 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46FDA60C19562B4B00B77E4E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				46FDA60D19562B9A00B77E4E /* LoginViewController.h */,
+				46FDA60E19562B9A00B77E4E /* LoginViewController.m */,
+				46FDA60F19562B9A00B77E4E /* LoginViewController.xib */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +258,7 @@
 			files = (
 				4695683319528ECF00E1A789 /* InfoPlist.strings in Resources */,
 				4695683B19528ECF00E1A789 /* Images.xcassets in Resources */,
+				46FDA61119562B9A00B77E4E /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FDA61019562B9A00B77E4E /* LoginViewController.m in Sources */,
 				4695683919528ECF00E1A789 /* AppDelegate.m in Sources */,
 				4665BF621952B2260029CADD /* TwitterClient.m in Sources */,
 				4695683519528ECF00E1A789 /* main.m in Sources */,

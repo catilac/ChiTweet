@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DFF81130-9878-485D-818E-9B5F0243B0B8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ChiTweet</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>27DE1AB4-B1FE-4208-8753-43256F04B339</key>
+		<string>ssh://github.com/chiragrules/ChiTweet.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ChiTweet.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>27DE1AB4-B1FE-4208-8753-43256F04B339</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/chiragrules/ChiTweet.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>27DE1AB4-B1FE-4208-8753-43256F04B339</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>27DE1AB4-B1FE-4208-8753-43256F04B339</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ChiTweet</string>
+		</dict>
+	</array>
+</dict>
+</plist>
