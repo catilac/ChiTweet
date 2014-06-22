@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "NSDictionary+BDBOAuth1Manager.h"
 #import "TwitterClient.h"
+#import "User.h"
 
 
 @implementation AppDelegate
@@ -18,8 +19,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    LoginViewController *loginScreen = [[LoginViewController alloc] init];
-    self.window.rootViewController = loginScreen;
+    
+    if ([User currentUser] == nil) {
+        LoginViewController *loginScreen = [[LoginViewController alloc] init];
+        self.window.rootViewController = loginScreen;
+    }
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -64,8 +68,20 @@
                 [client fetchAccessTokenWithPath:@"oauth/access_token" method:@"POST" requestToken:[BDBOAuthToken tokenWithQueryString:url.query] success:^(BDBOAuthToken *accessToken) {
                     NSLog(@"access token");
                     [client.requestSerializer saveAccessToken:accessToken];
+
+                    [client verifyCredentialsWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                        NSLog(@"verify creds: %@", responseObject);
+
+                        User *currentUser = [User currentUser];
+                        if (currentUser == nil) {
+                            currentUser = [[User alloc] initWithDictionary:responseObject];
+                            [User setCurrentUser:currentUser];
+                        }
+                        
+                    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                        NSLog(@"Something went wrong...");
+                    }];
                     
-                    [client homeTimeline];
                     
                 } failure:^(NSError *error) {
                     NSLog(@"no access token");

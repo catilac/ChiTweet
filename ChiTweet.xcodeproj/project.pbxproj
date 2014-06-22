@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4652EA4F1956A1C700125A9A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4652EA4E1956A1C700125A9A /* User.m */; };
+		4652EA521956A1D800125A9A /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4652EA511956A1D800125A9A /* Tweet.m */; };
 		4665BF621952B2260029CADD /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4665BF611952B2260029CADD /* TwitterClient.m */; };
 		4695682919528ECF00E1A789 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4695682819528ECF00E1A789 /* Foundation.framework */; };
 		4695682B19528ECF00E1A789 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4695682A19528ECF00E1A789 /* CoreGraphics.framework */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4652EA4D1956A1C700125A9A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		4652EA4E1956A1C700125A9A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		4652EA501956A1D800125A9A /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		4652EA511956A1D800125A9A /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 		4665BF601952B2260029CADD /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
 		4665BF611952B2260029CADD /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
 		4695682519528ECF00E1A789 /* ChiTweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChiTweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +92,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4652EA4C1956A1B600125A9A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4652EA4D1956A1C700125A9A /* User.h */,
+				4652EA4E1956A1C700125A9A /* User.m */,
+				4652EA501956A1D800125A9A /* Tweet.h */,
+				4652EA511956A1D800125A9A /* Tweet.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		4665BF5F1952AC120029CADD /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +147,7 @@
 		4695682E19528ECF00E1A789 /* ChiTweet */ = {
 			isa = PBXGroup;
 			children = (
+				4652EA4C1956A1B600125A9A /* Models */,
 				46FDA60C19562B4B00B77E4E /* View Controllers */,
 				4665BF5F1952AC120029CADD /* API */,
 				4695683719528ECF00E1A789 /* AppDelegate.h */,
@@ -310,8 +328,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4652EA4F1956A1C700125A9A /* User.m in Sources */,
 				46FDA61019562B9A00B77E4E /* LoginViewController.m in Sources */,
 				4695683919528ECF00E1A789 /* AppDelegate.m in Sources */,
+				4652EA521956A1D800125A9A /* Tweet.m in Sources */,
 				4665BF621952B2260029CADD /* TwitterClient.m in Sources */,
 				4695683519528ECF00E1A789 /* main.m in Sources */,
 			);

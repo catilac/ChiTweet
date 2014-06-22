@@ -33,12 +33,14 @@
     }];
 }
 
-- (AFHTTPRequestOperation *)homeTimeline {
-    return [self GET:@"1.1/statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Response: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"What ");
-    }];
+- (AFHTTPRequestOperation *)homeTimelineWithSuccess:(void (^)(AFHTTPRequestOperation *, id))success
+                                            failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    return [self GET:@"1.1/statuses/home_timeline.json" parameters:nil success:success failure:failure];
+}
+
+- (AFHTTPRequestOperation *)verifyCredentialsWithSuccess:(void (^)(AFHTTPRequestOperation *, id))success
+                                                failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    return [self GET:@"1.1/account/verify_credentials.json" parameters:nil success:success failure:failure];
 }
 
 @end
