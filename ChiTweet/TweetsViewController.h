@@ -14,7 +14,7 @@
 
 @end
 
-@interface TweetsViewController : UIViewController
+@interface TweetsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) id <TweetsViewControllerDelegate> delegate;
 

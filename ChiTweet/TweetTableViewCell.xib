@@ -1,18 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TweetTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="101" id="KGk-i7-Jjw" customClass="TweetTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Klh-RK-qeQ">
+                        <rect key="frame" x="20" y="8" width="45" height="45"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="45" id="I3n-iM-G7b"/>
+                            <constraint firstAttribute="height" constant="45" id="mzM-zc-LZn"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Er-lX-qes">
+                        <rect key="frame" x="73" y="3" width="67" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="kw7-Or-EVE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is my long long tweetie. I have so much to say on the internet today. #USA" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="227" translatesAutoresizingMaskIntoConstraints="NO" id="Mtd-hz-nIV">
+                        <rect key="frame" x="73" y="21" width="227" height="49"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@screennam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80X-K2-ktK">
+                        <rect key="frame" x="145" y="4" width="81" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="fuh-Hd-GZl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cv9-ub-ssi">
+                        <rect key="frame" x="73" y="75" width="35" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl0-Ib-yGc">
+                        <rect key="frame" x="284" y="4" width="16" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="ctY-IC-gFP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cv9-ub-ssi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="73" id="4N9-r7-w6g"/>
+                    <constraint firstItem="1Er-lX-qes" firstAttribute="leading" secondItem="Klh-RK-qeQ" secondAttribute="trailing" constant="8" id="5tJ-27-Ani"/>
+                    <constraint firstItem="Klh-RK-qeQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="6uW-xl-K7b"/>
+                    <constraint firstItem="Mtd-hz-nIV" firstAttribute="top" secondItem="1Er-lX-qes" secondAttribute="centerY" constant="7" id="96x-Ux-qfw"/>
+                    <constraint firstAttribute="trailing" secondItem="Hl0-Ib-yGc" secondAttribute="trailing" constant="20" id="NPp-re-sKE"/>
+                    <constraint firstItem="80X-K2-ktK" firstAttribute="leading" secondItem="1Er-lX-qes" secondAttribute="trailing" constant="5" id="WKp-YM-UWA"/>
+                    <constraint firstAttribute="trailing" secondItem="Mtd-hz-nIV" secondAttribute="trailing" constant="20" id="ehD-bp-7uw"/>
+                    <constraint firstItem="80X-K2-ktK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="pZ9-TZ-XTr"/>
+                    <constraint firstItem="Mtd-hz-nIV" firstAttribute="leading" secondItem="Klh-RK-qeQ" secondAttribute="trailing" constant="8" id="pdx-xe-Fis"/>
+                    <constraint firstItem="Klh-RK-qeQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="q2a-KU-ff0"/>
+                    <constraint firstItem="Hl0-Ib-yGc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="rJb-4n-nQC"/>
+                    <constraint firstItem="1Er-lX-qes" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="tdU-t9-y7Y"/>
+                    <constraint firstAttribute="bottom" secondItem="cv9-ub-ssi" secondAttribute="bottom" constant="8" id="wbN-7s-OxT"/>
+                    <constraint firstItem="cv9-ub-ssi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Mtd-hz-nIV" secondAttribute="bottom" constant="5" id="zbR-qh-eTI"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="fullName" destination="1Er-lX-qes" id="Vv1-mq-ouE"/>
+                <outlet property="profilePhoto" destination="Klh-RK-qeQ" id="jUp-tZ-R9o"/>
+                <outlet property="retweetedBy" destination="cv9-ub-ssi" id="BjY-8H-ZqU"/>
+                <outlet property="screenName" destination="80X-K2-ktK" id="MPh-V6-VrZ"/>
+                <outlet property="timestamp" destination="Hl0-Ib-yGc" id="QIo-sY-0y8"/>
+                <outlet property="tweetText" destination="Mtd-hz-nIV" id="oQ7-LA-H8y"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

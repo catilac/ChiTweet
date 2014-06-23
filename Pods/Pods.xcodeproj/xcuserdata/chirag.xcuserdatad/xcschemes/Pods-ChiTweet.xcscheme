@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FC7116F562754CA1A97A3C6F"
+               BlueprintIdentifier = "ED47B8BA701F4189AEF1B524"
                BuildableName = "libPods-ChiTweet.a"
                BlueprintName = "Pods-ChiTweet"
                ReferencedContainer = "container:Pods.xcodeproj">

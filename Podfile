@@ -3,6 +3,7 @@ platform :ios, "7.0"
 
 target "ChiTweet" do
   pod 'BDBOAuth1Manager'
+  pod 'AFNetworking'
 end
 
 target "ChiTweetTests" do

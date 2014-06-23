@@ -48,6 +48,7 @@ static User *currentUser = nil;
     self = [super init];
     if (self) {
         self.userName = dictionary[@"screen_name"];
+        self.fullName = dictionary[@"name"];
         self.profileImageURL = [[NSURL alloc] initWithString:dictionary[@"profile_image_url"]];
     }
     return self;

@@ -1,4 +1,11 @@
 PODS:
+  - AFNetworking (2.2.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
   - AFNetworking/NSURLConnection (2.2.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -8,11 +15,15 @@ PODS:
   - AFNetworking/Reachability (2.2.4)
   - AFNetworking/Security (2.2.4)
   - AFNetworking/Serialization (2.2.4)
+  - AFNetworking/UIKit (2.2.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - BDBOAuth1Manager (1.2.1):
     - AFNetworking/NSURLConnection (~> 2.2.0)
     - AFNetworking/NSURLSession (~> 2.2.0)
 
 DEPENDENCIES:
+  - AFNetworking
   - BDBOAuth1Manager
 
 SPEC CHECKSUMS:
