@@ -21,13 +21,16 @@ PODS:
   - BDBOAuth1Manager (1.2.1):
     - AFNetworking/NSURLConnection (~> 2.2.0)
     - AFNetworking/NSURLSession (~> 2.2.0)
+  - MHPrettyDate (1.1.1)
 
 DEPENDENCIES:
   - AFNetworking
   - BDBOAuth1Manager
+  - MHPrettyDate
 
 SPEC CHECKSUMS:
   AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
   BDBOAuth1Manager: 55c7390b5018cac757e322ad8f9ab782b0f9fd01
+  MHPrettyDate: d9f42f2ec3dfece6352f18ac77aa33312174e09e
 
 COCOAPODS: 0.33.1

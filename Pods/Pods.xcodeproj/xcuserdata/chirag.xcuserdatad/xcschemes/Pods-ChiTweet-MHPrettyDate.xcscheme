@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95331A1B473A4D51BEC3E12C"
-               BuildableName = "libPods-ChiTweet-BDBOAuth1Manager.a"
-               BlueprintName = "Pods-ChiTweet-BDBOAuth1Manager"
+               BlueprintIdentifier = "85C1260CE0114676A83792FD"
+               BuildableName = "libPods-ChiTweet-MHPrettyDate.a"
+               BlueprintName = "Pods-ChiTweet-MHPrettyDate"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

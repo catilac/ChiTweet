@@ -8,8 +8,10 @@
 
 #import "TweetTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "MHPrettyDate.h"
 
 @interface TweetTableViewCell ()
+
 @property (weak, nonatomic) IBOutlet UIImageView *profilePhoto;
 @property (weak, nonatomic) IBOutlet UILabel *fullName;
 @property (weak, nonatomic) IBOutlet UILabel *screenName;
@@ -37,13 +39,18 @@
     self.fullName.text = tweet.author.fullName;
     self.screenName.text = [NSString stringWithFormat:@"@%@",tweet.author.userName];
     
-//    NSDateFormatter *f = [[NSDateFormatter alloc] init];
-//    [f setDateStyle:NSDateFormatterShortStyle];
-//    [f setTimeStyle:NSDateFormatterShortStyle];
-//    NSLog(@"%@ --> %@", tweet.timestamp, [f stringFromDate:[f dateFromString:tweet.timestamp]]);
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
     
-    self.timestamp.text = @"3h";//tweet.timestamp;
+    [df setDateStyle:NSDateFormatterLongStyle];
+    [df setFormatterBehavior:NSDateFormatterBehavior10_4];
+    [df setDateFormat: @"EEE MMM dd HH:mm:ss Z yyyy"];
+    
+    NSDate *newDate = [df dateFromString:tweet.timestamp];
+    NSString *prettyDate = [MHPrettyDate prettyDateFromDate:newDate withFormat:MHPrettyDateShortRelativeTime];
+    
+    self.timestamp.text = prettyDate;
     self.tweetText.text= tweet.text;
+    self.retweetedBy.text = @"";
     
     [self.profilePhoto setImageWithURL:tweet.author.profileImageURL];
 }

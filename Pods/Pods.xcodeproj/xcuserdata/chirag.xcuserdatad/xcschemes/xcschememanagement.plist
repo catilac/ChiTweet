@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-ChiTweet-MHPrettyDate.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ChiTweet.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2631EEB5DC7341B3BD26809B</key>
+		<key>18ABCBA3F3BA41CEA37C9128</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>28FCF38467A44BC5A0591ED9</key>
+		<key>85C1260CE0114676A83792FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED47B8BA701F4189AEF1B524</key>
+		<key>95331A1B473A4D51BEC3E12C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AC3D7133F50842EF817D8226</key>
 		<dict>
 			<key>primary</key>
 			<true/>
