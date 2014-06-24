@@ -22,6 +22,11 @@
 
 @property (weak, nonatomic) Tweet *tweet;
 
+
+- (IBAction)reply:(id)sender;
+- (IBAction)retweet:(id)sender;
+- (IBAction)favorite:(id)sender;
+
 @end
 
 @implementation TweetViewController
@@ -68,6 +73,9 @@
         self.retweetedBy.text = @"";
     }
     
+    self.numRetweets.text = [NSString stringWithFormat:@"%d", self.tweet.numRetweets];
+    self.numFavorites.text = [NSString stringWithFormat:@"%d", self.tweet.numFavorites];
+    
     [self.profilePhoto setImageWithURL:self.tweet.author.profileImageURL];
 
     
@@ -79,4 +87,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)reply:(id)sender {
+}
+
+- (IBAction)retweet:(id)sender {
+}
+
+- (IBAction)favorite:(id)sender {
+}
 @end

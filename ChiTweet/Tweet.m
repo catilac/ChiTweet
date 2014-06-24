@@ -32,6 +32,8 @@
     self.text = tweet[@"text"];
     self.timestamp = tweet[@"created_at"];
     self.author = [[User alloc] initWithDictionary:tweet[@"user"]];
+    self.numFavorites = (NSInteger)tweet[@"favourites_count"];
+    self.numRetweets = (NSInteger)tweet[@"retweet_count"];
 }
 
 + (NSArray *)tweetsWithArray:(NSArray *)array {
