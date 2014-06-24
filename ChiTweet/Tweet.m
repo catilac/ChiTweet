@@ -12,7 +12,6 @@
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     NSDictionary *parentTweet = dictionary;
-    NSLog(@"%@", parentTweet);
     self = [super init];
     if (self) {
         if (parentTweet[@"retweeted_status"]) {
@@ -34,6 +33,7 @@
     self.author = [[User alloc] initWithDictionary:tweet[@"user"]];
     self.numFavorites = (NSInteger)tweet[@"favourites_count"];
     self.numRetweets = (NSInteger)tweet[@"retweet_count"];
+    self.tweetId = tweet[@"id"];
 }
 
 + (NSArray *)tweetsWithArray:(NSArray *)array {

@@ -38,6 +38,23 @@
     return [self GET:@"1.1/statuses/home_timeline.json" parameters:nil success:success failure:failure];
 }
 
+-(AFHTTPRequestOperation *)favoriteWithTweet:(Tweet *)tweet
+                                     success:(void (^)(AFHTTPRequestOperation *, id))success
+                                     failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+
+    NSDictionary *params = @{@"id": tweet.tweetId};
+    
+    return [self POST:@"1.1/favorites/create.json" parameters:params success:success failure:failure];
+}
+
+-(AFHTTPRequestOperation *)retweetWithTweet:(Tweet *)tweet
+                                    success:(void (^)(AFHTTPRequestOperation *, id))success
+                                    failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    
+    NSString *url = [NSString stringWithFormat:@"1.1/statuses/retweet/%@.json", tweet.tweetId];
+    return [self POST:url parameters:nil success:success failure:failure];
+}
+
 - (AFHTTPRequestOperation *)verifyCredentialsWithSuccess:(void (^)(AFHTTPRequestOperation *, id))success
                                                 failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     return [self GET:@"1.1/account/verify_credentials.json" parameters:nil success:success failure:failure];

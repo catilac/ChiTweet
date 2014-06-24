@@ -9,6 +9,7 @@
 #import "TweetViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "MHPrettyDate.h"
+#import "TwitterClient.h"
 
 @interface TweetViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profilePhoto;
@@ -44,6 +45,7 @@
     self = [super init];
     if (self) {
         self.tweet = tweet;
+        self.title = @"Tweet";
     }
     return self;
 }
@@ -92,8 +94,19 @@
 }
 
 - (IBAction)retweet:(id)sender {
+    [[TwitterClient instance] retweetWithTweet:self.tweet success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success Retweet");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Fail Retweet, %@", error);
+    }];
 }
 
 - (IBAction)favorite:(id)sender {
+    [[TwitterClient instance] favoriteWithTweet:self.tweet success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success Favorite");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Fail Favorite: %@", error);
+    }];
 }
+
 @end
