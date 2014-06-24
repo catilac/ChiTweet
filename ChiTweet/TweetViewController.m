@@ -76,12 +76,10 @@
         self.retweetedBy.text = @"";
     }
     
-    self.numRetweets.text = [NSString stringWithFormat:@"%d", self.tweet.numRetweets];
-    self.numFavorites.text = [NSString stringWithFormat:@"%d", self.tweet.numFavorites];
+    self.numRetweets.text = [NSString stringWithFormat:@"%ld", (long)self.tweet.numRetweets];
+    self.numFavorites.text = [NSString stringWithFormat:@"%ld", (long)self.tweet.numFavorites];
     
     [self.profilePhoto setImageWithURL:self.tweet.author.profileImageURL];
-
-    
 }
 
 - (void)didReceiveMemoryWarning
