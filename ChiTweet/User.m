@@ -9,7 +9,8 @@
 #import "User.h"
 
 #define CURRENT_USER_KEY @"chiTweetCurrentUser"
-#define ENCODE_USER_NAME_KEY @"userName"
+#define ENCODE_SCREEN_NAME_KEY @"screenName"
+#define ENCODE_FULL_NAME_KEY @"fullName"
 #define ENCODE_USER_PROFILE_IMG_URL @"userProfileImageURL"
 
 
@@ -47,7 +48,8 @@ static User *currentUser = nil;
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
-        self.userName = dictionary[@"screen_name"];
+        NSLog(@"user: %@", dictionary);
+        self.screenName = dictionary[@"screen_name"];
         self.fullName = dictionary[@"name"];
         self.profileImageURL = [[NSURL alloc] initWithString:dictionary[@"profile_image_url"]];
     }
@@ -59,14 +61,16 @@ static User *currentUser = nil;
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
     if (self) {
-        self.userName = [aDecoder decodeObjectForKey:ENCODE_USER_NAME_KEY];
+        self.screenName = [aDecoder decodeObjectForKey:ENCODE_SCREEN_NAME_KEY];
+        self.fullName = [aDecoder decodeObjectForKey:ENCODE_FULL_NAME_KEY];
         self.profileImageURL = [aDecoder decodeObjectForKey:ENCODE_USER_PROFILE_IMG_URL];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.userName forKey:ENCODE_USER_NAME_KEY];
+    [aCoder encodeObject:self.screenName forKey:ENCODE_SCREEN_NAME_KEY];
+    [aCoder encodeObject:self.fullName forKey:ENCODE_FULL_NAME_KEY];
     [aCoder encodeObject:self.profileImageURL forKey:ENCODE_USER_PROFILE_IMG_URL];
 }
 

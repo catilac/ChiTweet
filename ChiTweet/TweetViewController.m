@@ -10,6 +10,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "MHPrettyDate.h"
 #import "TwitterClient.h"
+#import "ComposeViewController.h"
 
 @interface TweetViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profilePhoto;
@@ -55,7 +56,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.fullName.text = self.tweet.author.fullName;
-    self.screenName.text = [NSString stringWithFormat:@"@%@",self.tweet.author.userName];
+    self.screenName.text = [NSString stringWithFormat:@"@%@",self.tweet.author.screenName];
     
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     
@@ -91,6 +92,8 @@
 
 
 - (IBAction)reply:(id)sender {
+    ComposeViewController *cvc = [[ComposeViewController alloc] init];
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 - (IBAction)retweet:(id)sender {

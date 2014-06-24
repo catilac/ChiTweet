@@ -37,7 +37,7 @@
 
 - (void)setTweet:(Tweet *)tweet {
     self.fullName.text = tweet.author.fullName;
-    self.screenName.text = [NSString stringWithFormat:@"@%@",tweet.author.userName];
+    self.screenName.text = [NSString stringWithFormat:@"@%@",tweet.author.screenName];
     
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     

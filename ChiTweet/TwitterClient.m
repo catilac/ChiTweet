@@ -38,6 +38,13 @@
     return [self GET:@"1.1/statuses/home_timeline.json" parameters:nil success:success failure:failure];
 }
 
+- (AFHTTPRequestOperation *)postTweet:(NSString *)tweet
+                              success:(void (^)(AFHTTPRequestOperation *, id))success
+                              failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    NSDictionary *params = @{@"status": tweet};
+    return [self POST:@"1.1/statuses/update.json" parameters:params success:success failure:failure];
+}
+
 -(AFHTTPRequestOperation *)favoriteWithTweet:(Tweet *)tweet
                                      success:(void (^)(AFHTTPRequestOperation *, id))success
                                      failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {

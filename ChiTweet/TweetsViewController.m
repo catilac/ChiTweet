@@ -10,6 +10,7 @@
 #import "TweetTableViewCell.h"
 #import "TweetViewController.h"
 #import "TwitterClient.h"
+#import "ComposeViewController.h"
 #import "User.h"
 #import "Tweet.h"
 
@@ -35,6 +36,9 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
                                                                                  style:UIBarButtonItemStylePlain
                                                                                 target:self action:@selector(logout)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Compose"
+                                                                                  style:UIBarButtonItemStylePlain
+                                                                                 target:self action:@selector(compose)];
     }
     return self;
 }
@@ -57,6 +61,11 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
     
     [self.delegate dismissView];
     
+}
+
+- (void)compose {
+    ComposeViewController *cvc = [[ComposeViewController alloc] init];
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 - (void)viewDidLoad
