@@ -8,6 +8,7 @@
 
 #import "TweetsViewController.h"
 #import "TweetTableViewCell.h"
+#import "TweetViewController.h"
 #import "TwitterClient.h"
 #import "User.h"
 #import "Tweet.h"
@@ -99,6 +100,12 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
 }
 
 # pragma mark UITableViewDelegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath; {
+    Tweet *tweet = self.tweets[indexPath.row];
+    [self.navigationController pushViewController:[[TweetViewController alloc] initWithTweet:tweet] animated:YES];
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     TweetTableViewCell *tweetCell = [tableView dequeueReusableCellWithIdentifier:TVC_REUSE_IDENT];
