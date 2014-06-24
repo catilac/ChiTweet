@@ -11,19 +11,34 @@
 @implementation Tweet
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
+    NSDictionary *parentTweet = dictionary;
+    NSLog(@"%@", parentTweet);
     self = [super init];
     if (self) {
-        self.text = dictionary[@"text"];
-        self.timestamp = dictionary[@"created_at"];
-        self.author = [[User alloc] initWithDictionary:dictionary[@"user"]];
+        if (parentTweet[@"retweeted_status"]) {
+            NSDictionary *retweet = parentTweet[@"retweeted_status"];
+            [self setTweetValues:retweet];
+            self.retweeted = YES;
+            self.retweetedBy = parentTweet[@"user"][@"name"];
+            
+        } else {
+            [self setTweetValues:parentTweet];
+        }
     }
     return self;
+}
+
+- (void)setTweetValues:(NSDictionary *)tweet {
+    self.text = tweet[@"text"];
+    self.timestamp = tweet[@"created_at"];
+    self.author = [[User alloc] initWithDictionary:tweet[@"user"]];
 }
 
 + (NSArray *)tweetsWithArray:(NSArray *)array {
     NSMutableArray *tweets = [[NSMutableArray alloc] init];
     
     for (NSDictionary *dictionary in array) {
+        
         Tweet *tweet = [[Tweet alloc] initWithDictionary:dictionary];
         [tweets addObject:tweet];
     }

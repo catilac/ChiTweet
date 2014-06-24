@@ -50,7 +50,12 @@
     
     self.timestamp.text = prettyDate;
     self.tweetText.text= tweet.text;
-    self.retweetedBy.text = @"";
+    
+    if (tweet.retweeted) {
+        self.retweetedBy.text = [NSString stringWithFormat:@"RT'd By: %@", tweet.retweetedBy];
+    } else {
+        self.retweetedBy.text = @"";
+    }
     
     [self.profilePhoto setImageWithURL:tweet.author.profileImageURL];
 }

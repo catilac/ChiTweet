@@ -14,6 +14,9 @@
 @property (nonatomic, strong) User *author;
 @property (nonatomic, strong) NSString *timestamp;
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, assign) Boolean retweeted;
+@property (nonatomic, strong) NSString *retweetedBy;
+
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 + (NSArray *)tweetsWithArray:(NSArray *)array;
