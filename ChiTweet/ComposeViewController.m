@@ -48,6 +48,7 @@
     self.fullName.text = user.fullName;
     self.screenName.text = user.screenName;
     [self.userImage setImageWithURL:user.profileImageURL];
+    [self.tweet setContentInset:UIEdgeInsetsMake(2.0, 1.0, 0, 0)];
 }
 
 - (void)didReceiveMemoryWarning
