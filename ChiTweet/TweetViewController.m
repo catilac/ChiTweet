@@ -97,6 +97,7 @@
 - (IBAction)retweet:(id)sender {
     [[TwitterClient instance] retweetWithTweet:self.tweet success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success Retweet");
+        self.numRetweets.text = [NSString stringWithFormat:@"%ld", ((long)self.tweet.numRetweets + 1)];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Fail Retweet, %@", error);
     }];
@@ -105,6 +106,7 @@
 - (IBAction)favorite:(id)sender {
     [[TwitterClient instance] favoriteWithTweet:self.tweet success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success Favorite");
+        self.numFavorites.text = [NSString stringWithFormat:@"%ld", ((long)self.tweet.numFavorites + 1)];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Fail Favorite: %@", error);
     }];
