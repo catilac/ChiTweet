@@ -8,10 +8,10 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-#import "TweetsViewController.h"
 #import "NSDictionary+BDBOAuth1Manager.h"
 #import "TwitterClient.h"
 #import "User.h"
+#import "MenuViewController.h"
 
 
 
@@ -39,9 +39,11 @@
 }
 
 - (void)loadLoggedInView {
-    TweetsViewController *tweetsVC = [[TweetsViewController alloc] init];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:tweetsVC];
-    self.window.rootViewController = nvc;
+    MenuViewController *mvc = [[MenuViewController alloc] init];
+//    TweetsViewController *tweetsVC = [[TweetsViewController alloc] init];
+//    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:tweetsVC];
+
+    self.window.rootViewController = mvc;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
