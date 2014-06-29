@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "TweetsViewController.h"
+#import "ProfileViewController.h"
 
 @interface MenuViewController ()
 
@@ -17,7 +18,8 @@
 
 @property (strong, nonatomic) UIViewController *currentViewController;
 @property (strong, nonatomic) UINavigationController *homeTimeline;
-@property (strong, nonatomic) UIViewController *profileView;
+@property (strong, nonatomic) UINavigationController *mentionsTimeline;
+@property (strong, nonatomic) ProfileViewController *profileView;
 
 - (IBAction)gotoProfile:(id)sender;
 - (IBAction)gotoHomeTimeline:(id)sender;
@@ -109,8 +111,7 @@ static Boolean menuOpen = false;
 - (IBAction)gotoProfile:(id)sender {
     [self hideCurrentView];
     if (self.profileView == nil) {
-        self.profileView = [[UIViewController alloc] init];
-        self.profileView.view.backgroundColor = [UIColor redColor];
+        self.profileView = [[ProfileViewController alloc] init];
     }
     [self displayContentController:self.profileView];
     [self closeMenu];
@@ -126,6 +127,11 @@ static Boolean menuOpen = false;
 }
 
 - (IBAction)gotoMentions:(id)sender {
+    if (self.mentionsTimeline == nil) {
+        TweetsViewController *mentionsViewController = [[TweetsViewController alloc] init];
+        self.mentionsTimeline = [[UINavigationController alloc] initWithRootViewController:mentionsViewController];
+    }
+    [self displayContentController:self.mentionsTimeline];
     [self closeMenu];
 }
 @end
