@@ -38,6 +38,11 @@
     return [self GET:@"1.1/statuses/home_timeline.json" parameters:nil success:success failure:failure];
 }
 
+-(AFHTTPRequestOperation *)mentionsWithSuccess:(void (^)(AFHTTPRequestOperation *, id))success
+                                       failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    return [self GET:@"1.1/statuses/mentions_timeline.json" parameters:nil success:success failure:failure];
+}
+
 - (AFHTTPRequestOperation *)postTweet:(NSString *)tweet
                               success:(void (^)(AFHTTPRequestOperation *, id))success
                               failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {

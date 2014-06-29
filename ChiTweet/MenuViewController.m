@@ -119,7 +119,7 @@ static Boolean menuOpen = false;
 
 - (IBAction)gotoHomeTimeline:(id)sender {
     if (self.homeTimeline == nil) {
-        TweetsViewController *tweetsViewController = [[TweetsViewController alloc] init];
+        TweetsViewController *tweetsViewController = [[TweetsViewController alloc] initWithAPICall:TwitterHomeTimeline];
         self.homeTimeline = [[UINavigationController alloc] initWithRootViewController:tweetsViewController];
     }
     [self displayContentController:self.homeTimeline];
@@ -128,7 +128,7 @@ static Boolean menuOpen = false;
 
 - (IBAction)gotoMentions:(id)sender {
     if (self.mentionsTimeline == nil) {
-        TweetsViewController *mentionsViewController = [[TweetsViewController alloc] init];
+        TweetsViewController *mentionsViewController = [[TweetsViewController alloc] initWithAPICall:TwitterMentionsTimeline];
         self.mentionsTimeline = [[UINavigationController alloc] initWithRootViewController:mentionsViewController];
     }
     [self displayContentController:self.mentionsTimeline];

@@ -22,6 +22,8 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSArray *tweets;
+@property (nonatomic) APICall apiCall;
+
 
 @end
 
@@ -43,15 +45,36 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
     return self;
 }
 
+- (id)initWithAPICall:(APICall)apiCall {
+    self = [super init];
+    if (self) {
+        self.apiCall = apiCall;
+    }
+    return self;
+}
+
 - (void) loadTweets {
-    [[TwitterClient instance] homeTimelineWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        self.tweets = [Tweet tweetsWithArray:responseObject];
-        [self.tableView reloadData];
-        [self.refreshControl endRefreshing];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error loading tweets: %@", error);
-        [self.refreshControl endRefreshing];
-    }];
+    
+    if (self.apiCall == TwitterMentionsTimeline) {
+        [[TwitterClient instance] mentionsWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            self.tweets = [Tweet tweetsWithArray:responseObject];
+            [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error loading tweets: %@", error);
+            [self.refreshControl endRefreshing];
+        }];
+    } else {
+        [[TwitterClient instance] homeTimelineWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            self.tweets = [Tweet tweetsWithArray:responseObject];
+            [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error loading tweets: %@", error);
+            [self.refreshControl endRefreshing];
+        }];
+        
+    }
 }
 
 - (void)logout {
