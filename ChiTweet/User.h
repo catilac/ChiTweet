@@ -11,8 +11,12 @@
 @interface User : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSURL *profileImageURL;
+@property (nonatomic, strong) NSURL *backgroundImageURL;
 @property (nonatomic, strong) NSString *screenName;
 @property (nonatomic, strong) NSString *fullName;
+@property (nonatomic, strong) NSString *numTweets;
+@property (nonatomic, strong) NSString *numFollowers;
+@property (nonatomic, strong) NSString *numFollowing;
 
 + (User *)currentUser;
 + (void)setCurrentUser:(User *)user;

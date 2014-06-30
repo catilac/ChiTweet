@@ -9,11 +9,18 @@
 #import "MenuViewController.h"
 #import "TweetsViewController.h"
 #import "ProfileViewController.h"
+#import "User.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface MenuViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIView *menuView;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *fullName;
+@property (weak, nonatomic) IBOutlet UILabel *screenName;
+
+
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panRecognizer;
 
 @property (strong, nonatomic) UIViewController *currentViewController;
@@ -38,7 +45,6 @@ static Boolean menuOpen = false;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.profileView = nil;
     }
     return self;
 }
@@ -46,6 +52,11 @@ static Boolean menuOpen = false;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    User *currentUser = [User currentUser];
+    [self.profileImage setImageWithURL:currentUser.profileImageURL];
+    self.fullName.text = currentUser.fullName;
+    self.screenName.text = currentUser.screenName;
+
     // Do any additional setup after loading the view from its nib.
     TweetsViewController *tweetsViewController = [[TweetsViewController alloc] init];
     self.homeTimeline = [[UINavigationController alloc] initWithRootViewController:tweetsViewController];
@@ -111,7 +122,7 @@ static Boolean menuOpen = false;
 - (IBAction)gotoProfile:(id)sender {
     [self hideCurrentView];
     if (self.profileView == nil) {
-        self.profileView = [[ProfileViewController alloc] init];
+        self.profileView = [[ProfileViewController alloc] initWithUser:[User currentUser]];
     }
     [self displayContentController:self.profileView];
     [self closeMenu];

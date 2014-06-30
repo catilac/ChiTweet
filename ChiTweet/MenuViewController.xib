@@ -7,8 +7,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
             <connections>
                 <outlet property="contentView" destination="DRE-nH-mdj" id="Ddy-1y-U8e"/>
+                <outlet property="fullName" destination="29A-CC-dH5" id="N5o-Ym-Ie8"/>
                 <outlet property="menuView" destination="wOa-AW-exP" id="CQI-dO-IVA"/>
                 <outlet property="panRecognizer" destination="9Qg-Yn-FCf" id="6hi-MR-G1x"/>
+                <outlet property="profileImage" destination="D8V-oy-aw2" id="jy1-uh-wfm"/>
+                <outlet property="screenName" destination="ByD-WI-MiR" id="jVR-jZ-Bv1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -12,6 +12,10 @@
 #define ENCODE_SCREEN_NAME_KEY @"screenName"
 #define ENCODE_FULL_NAME_KEY @"fullName"
 #define ENCODE_USER_PROFILE_IMG_URL @"userProfileImageURL"
+#define ENCODE_USER_PROFILE_BACKGROUND_IMG_URL @"userProfileBackgroundImageURL"
+#define ENCODE_USER_NUM_TWEETS @"numTweets"
+#define ENCODE_USER_NUM_FOLLOWERS @"numFollowers"
+#define ENCODE_USER_NUM_FOLLOWING @"numFollowing"
 
 
 @implementation User
@@ -51,6 +55,15 @@ static User *currentUser = nil;
         self.screenName = dictionary[@"screen_name"];
         self.fullName = dictionary[@"name"];
         self.profileImageURL = [[NSURL alloc] initWithString:dictionary[@"profile_image_url"]];
+        if (dictionary[@"profile_banner_url"]) {
+            NSString *url = [NSString stringWithFormat:@"%@/mobile_retina", dictionary[@"profile_banner_url"]];
+            self.backgroundImageURL = [[NSURL alloc] initWithString:url];
+        } else {
+            self.backgroundImageURL = nil;
+        }
+        self.numFollowing = dictionary[@"friends_count"];
+        self.numFollowers = dictionary[@"followers_count"];
+        self.numTweets = dictionary[@"statuses_count"];
     }
     return self;
 }
@@ -63,6 +76,11 @@ static User *currentUser = nil;
         self.screenName = [aDecoder decodeObjectForKey:ENCODE_SCREEN_NAME_KEY];
         self.fullName = [aDecoder decodeObjectForKey:ENCODE_FULL_NAME_KEY];
         self.profileImageURL = [aDecoder decodeObjectForKey:ENCODE_USER_PROFILE_IMG_URL];
+        self.backgroundImageURL = [aDecoder decodeObjectForKey:ENCODE_USER_PROFILE_BACKGROUND_IMG_URL];
+        self.numTweets = [aDecoder decodeObjectForKey:ENCODE_USER_NUM_TWEETS];
+        self.numFollowing = [aDecoder decodeObjectForKey:ENCODE_USER_NUM_FOLLOWING];
+        self.numFollowers = [aDecoder decodeObjectForKey:ENCODE_USER_NUM_FOLLOWERS];
+        
     }
     return self;
 }
@@ -71,6 +89,10 @@ static User *currentUser = nil;
     [aCoder encodeObject:self.screenName forKey:ENCODE_SCREEN_NAME_KEY];
     [aCoder encodeObject:self.fullName forKey:ENCODE_FULL_NAME_KEY];
     [aCoder encodeObject:self.profileImageURL forKey:ENCODE_USER_PROFILE_IMG_URL];
+    [aCoder encodeObject:self.backgroundImageURL forKey:ENCODE_USER_PROFILE_BACKGROUND_IMG_URL];
+    [aCoder encodeObject:self.numFollowing forKey:ENCODE_USER_NUM_FOLLOWING];
+    [aCoder encodeObject:self.numFollowers forKey:ENCODE_USER_NUM_FOLLOWERS];
+    [aCoder encodeObject:self.numTweets forKey:ENCODE_USER_NUM_TWEETS];
 }
 
 
