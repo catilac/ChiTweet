@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TweetTableViewCell.h"
 
 @protocol TweetsViewControllerDelegate <NSObject>
 
@@ -19,7 +20,7 @@ typedef NS_ENUM(NSInteger, APICall) {
     TwitterMentionsTimeline
 };
 
-@interface TweetsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TweetsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, TweetViewCellDelegate>
 
 @property (nonatomic, weak) id <TweetsViewControllerDelegate> delegate;
 

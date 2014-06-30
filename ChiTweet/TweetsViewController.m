@@ -7,12 +7,12 @@
 //
 
 #import "TweetsViewController.h"
-#import "TweetTableViewCell.h"
 #import "TweetViewController.h"
 #import "TwitterClient.h"
 #import "ComposeViewController.h"
 #import "User.h"
 #import "Tweet.h"
+#import "ProfileViewController.h"
 
 
 static NSString *const TVC_REUSE_IDENT = @"TweetCell";
@@ -127,6 +127,7 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
     Tweet *tweet = self.tweets[indexPath.row];
     
     [tweetCell setTweet:tweet];
+    tweetCell.delegate = self;
     
     return tweetCell;
 }
@@ -149,6 +150,13 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
     CGFloat height = [tweetCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
 
     return height;
+}
+
+# pragma mark - TweetViewCellDelegate methods
+
+- (void)showProfile:(User *)profile {
+    ProfileViewController *pvc = [[ProfileViewController alloc] initWithUser:profile];
+    [self.navigationController pushViewController:pvc animated:YES];    
 }
 
 @end

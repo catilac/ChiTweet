@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *tweetText;
 @property (weak, nonatomic) IBOutlet UILabel *retweetedBy;
 
+@property (strong, nonatomic) User *author;
+
 @end
 
 @implementation TweetTableViewCell
@@ -26,6 +28,14 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onProfileTap:)];
+    
+    [self.profilePhoto addGestureRecognizer:tapGestureRecognizer];
+    self.profilePhoto.userInteractionEnabled = YES;
+}
+
+- (void)onProfileTap:(UIImageView *)target {
+    [self.delegate showProfile:self.author];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -36,6 +46,7 @@
 }
 
 - (void)setTweet:(Tweet *)tweet {
+    self.author = tweet.author;
     self.fullName.text = tweet.author.fullName;
     self.screenName.text = [NSString stringWithFormat:@"@%@",tweet.author.screenName];
     
