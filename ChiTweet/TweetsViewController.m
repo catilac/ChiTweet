@@ -220,9 +220,52 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
     [screenName sizeToFit];
     [screenName setCenter:CGPointMake(midX, midY + pictureFrame.frame.size.height/2 + 35)];
     [profileInformation addSubview:screenName];
+    
+    UIView *twitterStats = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                    bannerImage.frame.size.height,
+                                                                    tableView.frame.size.width, 50)];
+    twitterStats.backgroundColor = [UIColor whiteColor];
+    
+    CGFloat thirdStatWidth = twitterStats.frame.size.width/3;
+    
+    // Add Tweet Stat
+    UILabel *stat = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, thirdStatWidth, 15)];
+    stat.text = [NSString stringWithFormat:@"%@", self.user.numTweets];
+    stat.textColor = [UIColor blackColor];
+    [twitterStats addSubview:stat];
+    
+    UILabel *statLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 16, thirdStatWidth, 15)];
+    statLabel.text = @"TWEETS";
+    statLabel.textColor = [UIColor grayColor];
+    [twitterStats addSubview:statLabel];
+    
+    // Add Following Stat
+    stat = [[UILabel alloc] initWithFrame:CGRectMake(thirdStatWidth-10, 0, thirdStatWidth, 15)];
+    stat.text = [NSString stringWithFormat:@"%@", self.user.numFollowing];
+    stat.textColor = [UIColor blackColor];
+    [twitterStats addSubview:stat];
+    
+    statLabel = [[UILabel alloc] initWithFrame:CGRectMake(thirdStatWidth-10, 16, thirdStatWidth, 15)];
+    statLabel.text = @"FOLLOWING";
+    statLabel.textColor = [UIColor grayColor];
+    [twitterStats addSubview:statLabel];
+    
+    // Add Followers Stat
+    stat = [[UILabel alloc] initWithFrame:CGRectMake(2*thirdStatWidth, 0, thirdStatWidth, 15)];
+    stat.text = [NSString stringWithFormat:@"%@", self.user.numFollowers];
+    stat.textColor = [UIColor blackColor];
+    [twitterStats addSubview:stat];
+    
+    statLabel = [[UILabel alloc] initWithFrame:CGRectMake(2*thirdStatWidth, 16, thirdStatWidth, 15)];
+    statLabel.text = @"FOLLOWERS";
+    statLabel.textColor = [UIColor grayColor];
+    [twitterStats addSubview:statLabel];
+
 
     
     
+    [profileInformation addSubview:twitterStats];
+
     
     return profileInformation;
 }
