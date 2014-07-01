@@ -260,12 +260,8 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
     statLabel.text = @"FOLLOWERS";
     statLabel.textColor = [UIColor grayColor];
     [twitterStats addSubview:statLabel];
-
-
-    
     
     [profileInformation addSubview:twitterStats];
-
     
     return profileInformation;
 }
