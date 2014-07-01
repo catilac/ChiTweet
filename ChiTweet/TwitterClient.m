@@ -43,6 +43,14 @@
     return [self GET:@"1.1/statuses/mentions_timeline.json" parameters:nil success:success failure:failure];
 }
 
+- (AFHTTPRequestOperation *)userTimelineWithUser:(User *)user
+                                         success:(void (^)(AFHTTPRequestOperation *, id))success
+                                         failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    NSString *req = [NSString stringWithFormat:@"1.1/statuses/user_timeline.json?screen_name=%@&count=25", user.screenName];
+    return [self GET:req parameters:nil success:success failure:failure];
+}
+
+
 - (AFHTTPRequestOperation *)postTweet:(NSString *)tweet
                               success:(void (^)(AFHTTPRequestOperation *, id))success
                               failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {

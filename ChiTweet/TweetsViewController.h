@@ -17,7 +17,8 @@
 
 typedef NS_ENUM(NSInteger, APICall) {
     TwitterHomeTimeline,
-    TwitterMentionsTimeline
+    TwitterMentionsTimeline,
+    TwitterUserTimeline
 };
 
 @interface TweetsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, TweetViewCellDelegate>
@@ -25,5 +26,6 @@ typedef NS_ENUM(NSInteger, APICall) {
 @property (nonatomic, weak) id <TweetsViewControllerDelegate> delegate;
 
 - (id)initWithAPICall:(APICall)apiCall;
+- (id)initUserTimeline:(User *)user;
 
 @end

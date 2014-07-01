@@ -12,7 +12,7 @@
 #import "ComposeViewController.h"
 #import "User.h"
 #import "Tweet.h"
-#import "ProfileViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 
 static NSString *const TVC_REUSE_IDENT = @"TweetCell";
@@ -23,7 +23,7 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSArray *tweets;
 @property (nonatomic) APICall apiCall;
-
+@property (nonatomic, strong) User *user;
 
 @end
 
@@ -34,13 +34,6 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"Home";
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
-                                                                                 style:UIBarButtonItemStylePlain
-                                                                                target:self action:@selector(logout)];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Compose"
-                                                                                  style:UIBarButtonItemStylePlain
-                                                                                 target:self action:@selector(compose)];
     }
     return self;
 }
@@ -53,10 +46,29 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
     return self;
 }
 
-- (void) loadTweets {
+- (id)initUserTimeline:(User *)user {
+    self = [super init];
+    if (self) {
+        self.apiCall = TwitterUserTimeline;
+        self.user = user;
+    }
+    return self;
+}
+
+- (void)loadTweets {
+    TwitterClient *client = [TwitterClient instance];
     
     if (self.apiCall == TwitterMentionsTimeline) {
-        [[TwitterClient instance] mentionsWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [client mentionsWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            self.tweets = [Tweet tweetsWithArray:responseObject];
+            [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error loading tweets: %@", error);
+            [self.refreshControl endRefreshing];
+        }];
+    } else if (self.apiCall == TwitterUserTimeline) {
+        [client userTimelineWithUser:self.user success:^(AFHTTPRequestOperation *operation, id responseObject) {
             self.tweets = [Tweet tweetsWithArray:responseObject];
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
@@ -65,7 +77,7 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
             [self.refreshControl endRefreshing];
         }];
     } else {
-        [[TwitterClient instance] homeTimelineWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [client homeTimelineWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             self.tweets = [Tweet tweetsWithArray:responseObject];
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
@@ -95,6 +107,18 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    if (self.user) {
+        self.title = self.user.fullName;
+    } else {
+        self.title = @"Home";
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
+                                                                                 style:UIBarButtonItemStylePlain
+                                                                                target:self action:@selector(logout)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Compose"
+                                                                                  style:UIBarButtonItemStylePlain
+                                                                                 target:self action:@selector(compose)];
+    }
+
     self.delegate = (UIResponder<TweetsViewControllerDelegate> *)[[UIApplication sharedApplication] delegate];
     
     self.tableView.delegate = self;
@@ -105,7 +129,10 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
     [self.refreshControl addTarget:self
                             action:@selector(loadTweets)
                   forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:self.refreshControl];
+    
+    if (!self.user) {
+        [self.tableView addSubview:self.refreshControl];
+    }
     
     [self loadTweets];
 }
@@ -152,12 +179,63 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
     return height;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (self.user) {
+        return 200.0f;
+    } else {
+        return 0;
+    }
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *profileInformation = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 200)];
+    UIImageView *bannerImage = [[UIImageView alloc] initWithFrame:profileInformation.frame];
+    [bannerImage setImageWithURL:self.user.backgroundImageURL];
+    // Add Banner
+    [profileInformation addSubview:bannerImage];
+    
+    CGFloat midX = profileInformation.frame.size.width/2;
+    CGFloat midY = profileInformation.frame.size.height/2;
+    
+    // Add profile Photo
+    UIView *pictureFrame = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 55, 55)];
+    [pictureFrame setCenter:CGPointMake(midX, midY)];
+    pictureFrame.backgroundColor = [UIColor whiteColor];
+    UIImageView *avatar = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 45, 45)];
+    [avatar setImageWithURL:self.user.profileImageURL];
+    [pictureFrame addSubview:avatar];
+    [profileInformation addSubview:pictureFrame];
+    
+    UILabel *username = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 17)];
+    username.text = self.user.fullName;
+    username.textColor = [UIColor whiteColor];
+    [username sizeToFit];
+    [username setCenter:CGPointMake(midX, midY + pictureFrame.frame.size.height/2 + 15)];
+    [profileInformation addSubview:username];
+    
+    UILabel *screenName = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 17)];
+    screenName.text = [NSString stringWithFormat:@"@%@", self.user.screenName];
+    screenName.textColor = [UIColor whiteColor];
+    [screenName sizeToFit];
+    [screenName setCenter:CGPointMake(midX, midY + pictureFrame.frame.size.height/2 + 35)];
+    [profileInformation addSubview:screenName];
+
+    
+    
+    
+    return profileInformation;
+}
+
+
 # pragma mark - TweetViewCellDelegate methods
 
 - (void)showProfile:(User *)profile {
-    ProfileViewController *pvc = [[ProfileViewController alloc] initWithUser:profile];
-    pvc.title = profile.fullName;
-    [self.navigationController pushViewController:pvc animated:YES];    
+    if (!self.user) {
+        TweetsViewController *pvc = [[TweetsViewController alloc] initUserTimeline:profile];
+        pvc.title = profile.fullName;
+        [self.navigationController pushViewController:pvc animated:YES];
+    }
 }
 
 @end

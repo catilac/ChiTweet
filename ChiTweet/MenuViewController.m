@@ -8,7 +8,6 @@
 
 #import "MenuViewController.h"
 #import "TweetsViewController.h"
-#import "ProfileViewController.h"
 #import "User.h"
 #import "UIImageView+AFNetworking.h"
 
@@ -26,7 +25,7 @@
 @property (strong, nonatomic) UIViewController *currentViewController;
 @property (strong, nonatomic) UINavigationController *homeTimeline;
 @property (strong, nonatomic) UINavigationController *mentionsTimeline;
-@property (strong, nonatomic) ProfileViewController *profileView;
+@property (strong, nonatomic) TweetsViewController *profileView;
 
 - (IBAction)gotoProfile:(id)sender;
 - (IBAction)gotoHomeTimeline:(id)sender;
@@ -122,7 +121,7 @@ static Boolean menuOpen = false;
 - (IBAction)gotoProfile:(id)sender {
     [self hideCurrentView];
     if (self.profileView == nil) {
-        self.profileView = [[ProfileViewController alloc] initWithUser:[User currentUser]];
+        self.profileView = [[TweetsViewController alloc] initUserTimeline:[User currentUser]];
     }
     [self displayContentController:self.profileView];
     [self closeMenu];
