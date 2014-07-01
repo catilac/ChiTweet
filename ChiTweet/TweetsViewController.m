@@ -156,6 +156,7 @@ static NSString *const TVC_REUSE_IDENT = @"TweetCell";
 
 - (void)showProfile:(User *)profile {
     ProfileViewController *pvc = [[ProfileViewController alloc] initWithUser:profile];
+    pvc.title = profile.fullName;
     [self.navigationController pushViewController:pvc animated:YES];    
 }
 

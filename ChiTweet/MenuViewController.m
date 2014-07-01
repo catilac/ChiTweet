@@ -71,7 +71,7 @@ static Boolean menuOpen = false;
 }
 
 - (void)openMenu {
-    [UIView animateWithDuration:0.35 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
         self.contentView.frame = CGRectMake(MenuFullyDisplayedWidth,
                                             0,
                                             self.contentView.frame.size.width,
@@ -82,7 +82,7 @@ static Boolean menuOpen = false;
 }
 
 - (void)closeMenu {
-    [UIView animateWithDuration:0.35 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
         self.contentView.frame = CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height);
     } completion:^(BOOL finished) {
         menuOpen = NO;
