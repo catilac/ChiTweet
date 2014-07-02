@@ -22,7 +22,10 @@ Features
 - [x] Tapping on a user image should bring up that user's profile page
 
 #### Account Switching
-- [ ] Nope :(
+- [ ] Long press on tab bar to bring up Account view with animation
+- [ ] Tap account to switch to
+- [ ] Include a plus button to Add an Account
+- [ ] Swipe to delete an account
 
 Walkthrough
 ------------
