@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, APICall) {
     TwitterUserTimeline
 };
 
-@interface TweetsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, TweetViewCellDelegate>
+@interface TweetsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, TweetViewCellDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, weak) id <TweetsViewControllerDelegate> delegate;
 

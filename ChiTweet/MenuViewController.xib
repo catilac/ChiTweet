@@ -28,15 +28,15 @@
                             <rect key="frame" x="20" y="20" width="45" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29A-CC-dH5">
-                            <rect key="frame" x="73" y="20" width="101" height="17"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chirag Davé" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29A-CC-dH5" userLabel="fullname">
+                            <rect key="frame" x="73" y="20" width="101" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByD-WI-MiR">
-                            <rect key="frame" x="73" y="44" width="42" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByD-WI-MiR" userLabel="screename">
+                            <rect key="frame" x="73" y="44" width="90" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -98,7 +98,7 @@
                         <constraint firstAttribute="width" constant="194" id="fP0-ku-MD0"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRE-nH-mdj" userLabel="ContentView">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRE-nH-mdj" userLabel="ContentView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -111,11 +111,7 @@
                 <constraint firstItem="wOa-AW-exP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="271-Ly-eZV"/>
                 <constraint firstItem="wOa-AW-exP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BsF-HK-UHi"/>
                 <constraint firstAttribute="bottom" secondItem="wOa-AW-exP" secondAttribute="bottom" id="JlY-3F-dQn"/>
-                <constraint firstAttribute="trailing" secondItem="DRE-nH-mdj" secondAttribute="trailing" id="QNR-91-Z4J"/>
                 <constraint firstAttribute="trailing" secondItem="wOa-AW-exP" secondAttribute="trailing" constant="126" id="R3I-ES-D4a"/>
-                <constraint firstItem="DRE-nH-mdj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Sfq-2A-96W"/>
-                <constraint firstAttribute="bottom" secondItem="DRE-nH-mdj" secondAttribute="bottom" id="XO9-oJ-cWi"/>
-                <constraint firstItem="DRE-nH-mdj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="c9g-Yy-JEh"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

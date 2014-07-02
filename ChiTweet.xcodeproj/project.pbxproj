@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		461E6EE8195968CF006CA1B1 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 461E6EE6195968CF006CA1B1 /* ComposeViewController.m */; };
 		461E6EE9195968CF006CA1B1 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 461E6EE7195968CF006CA1B1 /* ComposeViewController.xib */; };
+		463EC9391963A6A100D6618C /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 463EC9381963A6A100D6618C /* UIImage+ImageEffects.m */; };
 		4652EA4F1956A1C700125A9A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4652EA4E1956A1C700125A9A /* User.m */; };
 		4652EA521956A1D800125A9A /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4652EA511956A1D800125A9A /* Tweet.m */; };
 		4652EA5B1956DB5500125A9A /* TweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4652EA591956DB5500125A9A /* TweetsViewController.m */; };
@@ -51,6 +52,8 @@
 		461E6EE5195968CF006CA1B1 /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		461E6EE6195968CF006CA1B1 /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		461E6EE7195968CF006CA1B1 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		463EC9371963A6A100D6618C /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		463EC9381963A6A100D6618C /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		4652EA4D1956A1C700125A9A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		4652EA4E1956A1C700125A9A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		4652EA501956A1D800125A9A /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
@@ -117,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		463EC9361963A69000D6618C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				463EC9371963A6A100D6618C /* UIImage+ImageEffects.h */,
+				463EC9381963A6A100D6618C /* UIImage+ImageEffects.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		4652EA4C1956A1B600125A9A /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +194,7 @@
 		4695682E19528ECF00E1A789 /* ChiTweet */ = {
 			isa = PBXGroup;
 			children = (
+				463EC9361963A69000D6618C /* Categories */,
 				4652EA5D1956DCB800125A9A /* Views */,
 				4652EA4C1956A1B600125A9A /* Models */,
 				46FDA60C19562B4B00B77E4E /* View Controllers */,
@@ -389,6 +402,7 @@
 				4652EA611956DCD200125A9A /* TweetTableViewCell.m in Sources */,
 				4652EA521956A1D800125A9A /* Tweet.m in Sources */,
 				4665BF621952B2260029CADD /* TwitterClient.m in Sources */,
+				463EC9391963A6A100D6618C /* UIImage+ImageEffects.m in Sources */,
 				4695683519528ECF00E1A789 /* main.m in Sources */,
 				4667A800195FE082008190B2 /* MenuViewController.m in Sources */,
 				4652EA5B1956DB5500125A9A /* TweetsViewController.m in Sources */,
